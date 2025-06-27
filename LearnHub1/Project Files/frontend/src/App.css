@@ -1,0 +1,481 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: none;
+  outline: none
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#root{
+  background-color: rgba(255, 224, 184, 0.523);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+
+}
+
+.content {
+  flex: 1;
+}
+
+.content .first-container {
+  background-image: url("../src/assets/Images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.first-container,
+.second-container {
+  width: 100%;
+  height: 92vh;
+}
+
+.content-home {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+
+}
+
+.content-home p {
+  font-size: 42px;
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  letter-spacing: 10px;
+}
+
+.content-home button {
+  background-color: white;
+  color: black;
+
+}
+
+.card-container,
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+}
+
+.card-container,
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.filter-container input,
+select {
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.card,
+.card1 {
+  width: calc(33%-10px);
+  height: 40%;
+}
+
+.read-more-link {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.card1 {
+  border-radius: 5px;
+  width: 300px;
+  height: 320px;
+  position: relative;
+  border: 1px solid;
+  overflow: hidden;
+}
+
+/* Add this CSS to your styles */
+.description-container {
+  width: 100%;
+  overflow-x: auto;
+  /* Enable horizontal scroll if content overflows */
+}
+
+.description {
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+  overflow: hidden;
+  /* Hide overflowing content */
+  text-overflow: ellipsis;
+  /* Display ellipsis (...) for truncated text */
+  padding: 5px;
+  /* Add padding for better visibility */
+}
+
+
+.card1 .desc {
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  transition: .5s;
+  padding: 10px;
+}
+
+.card1:hover .desc {
+  opacity: .5;
+  transform: translateX(30%);
+}
+
+.card1 .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../src/assets/Images/bg.jpg');
+  background-size: cover;
+
+  transition: 1.9s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+  border-radius: 5px;
+}
+
+.card1:hover .details {
+  transform: perspective(2000px) rotateY(0deg);
+}
+
+.card1 .details .center {
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+}
+
+.card1 .details .center h1 {
+  margin: 0;
+  padding: 0;
+  color: #ff3636;
+  line-height: 20px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.card1 .details .center h1 span {
+  font-size: 14px;
+  color: #262626;
+}
+
+.card1 .details .center p {
+  margin: 10px 0;
+  padding: 0;
+  color: #262626;
+}
+
+.card1 .details .center ul {
+  margin: 10px auto 0;
+  padding: 0;
+  display: table;
+}
+
+.card1 .details .center ul li {
+  list-style: none;
+  margin: 0 5px;
+  float: left;
+}
+
+.card1 .details .center ul li a {
+  display: block;
+  background: #262626;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  transform: .5s;
+}
+
+.card1 .details .center ul li a:hover {
+  background: #ff3636;
+}
+
+.course-content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course-section {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.course-video {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (min-width: 940px) {
+  .card {
+    width: calc(25%-10px);
+  }
+
+}
+
+.certificate {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.certificate h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.certificate .content {
+  margin-bottom: 40px;
+}
+
+.certificate .content h2 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.certificate .content h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.certificate .content .date {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.custom-btn {
+  background: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 24px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.custom-btn:hover, .custom-btn:focus {
+  background: linear-gradient(90deg, #feb47b 0%, #ff7e5f 100%);
+  color: #222 !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.trending-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ff7e5f;
+  letter-spacing: 2px;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  text-shadow: 1px 2px 8px #ffe0c2;
+}
+
+.trending-courses-box {
+  background: #fff7f0;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(255,126,95,0.08);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+.trending-course-card {
+  border: 2px solid #ff7e5f;
+  box-shadow: 0 6px 24px rgba(255,126,95,0.13);
+  margin-bottom: 24px;
+  transition: box-shadow 0.3s, border 0.3s;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.trending-course-card:hover {
+  border: 2.5px solid #ffb88c;
+  box-shadow: 0 12px 36px rgba(255,126,95,0.22);
+}
+
+/* Universal button style for the entire project */
+button, .btn, .Button, .custom-btn {
+  background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(34,197,94,0.08);
+  transition: background 0.2s, transform 0.1s;
+  outline: none;
+}
+button:hover, .btn:hover, .Button:hover, .custom-btn:hover {
+  background: linear-gradient(90deg, #16a34a 0%, #22c55e 100%);
+  color: #fff !important;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(34,197,94,0.15);
+}
+button:active, .btn:active, .Button:active, .custom-btn:active {
+  background: #15803d;
+  color: #fff !important;
+  transform: scale(0.98);
+}
+
+.custom-btn.home-btn {
+  background: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
+}
+.custom-btn.login-btn {
+  background: linear-gradient(90deg, #36d1c4 0%, #5b86e5 100%);
+}
+.custom-btn.register-btn {
+  background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%);
+}
+.custom-btn.explore-btn {
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+}
+
+.add-input-btn {
+  background: linear-gradient(90deg, #36d1c4 0%, #5b86e5 100%) !important;
+  color: #fff !important;
+}
+.submit-course-btn {
+  background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%) !important;
+  color: #fff !important;
+}
+.delete-course-btn {
+  background: linear-gradient(90deg, #ff5858 0%, #f857a6 100%) !important;
+  color: #fff !important;
+}
+
+.play-btn {
+  background: linear-gradient(90deg, #36d1c4 0%, #5b86e5 100%) !important;
+  color: #fff !important;
+}
+.pause-btn {
+  background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%) !important;
+  color: #fff !important;
+}
+.download-cert-btn {
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%) !important;
+  color: #fff !important;
+}
+
+.course-title-ellipsis {
+  display: inline-block;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+
+@media (max-width: 768px) {
+  .course-section {
+    width: 100%;
+    /* Take full width on smaller screens */
+  }
+
+  .course-video {
+    width: 100%;
+    /* Take full width on smaller screens */
+  }
+}
+
+.payment-modal .modal-content {
+  border-radius: 18px !important;
+  box-shadow: 0 8px 32px rgba(255,179,0,0.18), 0 2px 8px rgba(41,182,246,0.10);
+  border: none;
+  padding: 0;
+}
+.payment-modal .modal-header {
+  border-top-left-radius: 18px !important;
+  border-top-right-radius: 18px !important;
+  background: linear-gradient(90deg, #ffb300 0%, #ffe082 100%);
+  color: #222;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-bottom: none;
+}
+.payment-modal .modal-title {
+  color: #222;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.payment-modal .modal-body {
+  background: #fff;
+  border-radius: 0 0 18px 18px;
+  padding: 32px 28px;
+}
+.payment-modal .form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+}
+.payment-modal .btn-danger {
+  background: linear-gradient(90deg, #ff5252 0%, #ffb300 100%) !important;
+  border: none !important;
+  font-weight: 600;
+}
+.payment-modal .btn-secondary {
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .payment-modal .modal-body {
+    padding: 18px 6px;
+  }
+}
+
+
